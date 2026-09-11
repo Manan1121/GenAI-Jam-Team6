@@ -61,6 +61,23 @@ class ValidateISBNTest {
 				});
 	}
 	
+	@Test
+	public void nullISBNThrowsException() {
+		ValidateISBN validator = new ValidateISBN();
+		assertThrows(NumberFormatException.class, 
+				() -> {
+					validator.checkISBN(null);
+				});
+	}
+	
+	@Test
+	public void emptyISBNThrowsException() {
+		ValidateISBN validator = new ValidateISBN();
+		assertThrows(NumberFormatException.class, 
+				() -> {
+					validator.checkISBN("");
+				});
+	}
 	
 }
 
